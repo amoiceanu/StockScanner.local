@@ -1,0 +1,19 @@
+[Unit]
+Description=Trading Intelligence research service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tradingagent
+Group=tradingagent
+WorkingDirectory=/opt/trading-agent
+ExecStart=/opt/trading-agent/.venv/bin/python -m app.main
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

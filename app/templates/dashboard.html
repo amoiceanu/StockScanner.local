@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trading Intelligence</title><link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header><div><p class="eyebrow">RESEARCH CONSOLE</p><h1>TRADING INTELLIGENCE</h1></div><div id="market" class="status">Loading…</div></header>
+<main>
+  <section class="overview">
+    <div class="metric"><span>Market status</span><strong id="market-status">—</strong></div>
+    <div class="metric"><span>Last refresh</span><strong id="last-scan">—</strong></div>
+    <div class="metric"><span>Next scan</span><strong id="next-scan">—</strong></div>
+    <div class="metric"><span>Total signals</span><strong id="total-signals">—</strong></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><div><p class="eyebrow">LIVE UNIVERSE</p><h2>Watchlist</h2></div><form id="add-form"><input id="ticker" maxlength="32" placeholder="Ticker (e.g. NVDA)" required><button>Add</button><button type="button" id="scan-all" class="accent">Scan all</button></form></div>
+    <div id="watchlist" class="watchlist"><p class="muted">No data yet. Run a scan to populate recommendations.</p></div>
+  </section>
+  <section id="detail" class="panel hidden">
+    <div class="panel-head"><div><p class="eyebrow">INSTRUMENT DETAIL</p><h2 id="detail-symbol">—</h2></div><button id="scan-one" class="accent">Scan now</button></div>
+    <div id="detail-body"></div>
+  </section>
+</main>
+<footer>Research signal only. No automatic trade execution. · Times shown in {{ timezone }}</footer>
+<div id="toast"></div><script src="/static/app.js"></script>
+</body></html>
